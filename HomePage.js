@@ -17,15 +17,16 @@ person["lastName"];
 
 /*OBJECT METHODS
 Methods are actions that can be performed on objects.*/
-// var person = {
-//     firstName: "John",
-//     lastName : "Doe",
-//     id       : 5566,
-//     fullName : function() {
-//       return this.firstName + " " + this.lastName;
-//     }
-// };
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+      return this.firstName + " " + this.lastName;
+    }
+};
 
+//Constructor
 function Person(first, last, age, eye) {
     this.firstName = first;
     this.lastName = last;
@@ -48,6 +49,7 @@ person.nationality = "English";
 delete person.age;
 
 
+//Function that creates an object and displays the name
 function changeHeading(){
     function Person(first, last, age, eye) {
         this.firstName = first;
