@@ -28,15 +28,15 @@ var person = {
 };
 
 //Constructor
-function Person(first, last, age, eye) {
-    this.firstName = first;
-    this.lastName = last;
-    this.age = age;
-    this.eyeColor = eye;
-    this.name = function() {
-      return this.firstName + " " + this.lastName
-    };
-}
+// function Person(first, last, age, eye) {
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.age = age;
+//     this.eyeColor = eye;
+//     this.name = function() {
+//       return this.firstName + " " + this.lastName
+//     };
+// }
   
 
 //You can access an object method with the following syntax:
