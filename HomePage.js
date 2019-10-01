@@ -77,5 +77,5 @@ class Person {
 
 function changeHeading() {
   let person2 = new Person("Jared", "Smith", 38, "Blue");
-  document.getElementById("heading").innerHTML = person1.name();
+  document.getElementById("heading").innerHTML = person2.name();
 }
