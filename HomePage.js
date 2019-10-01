@@ -18,6 +18,7 @@ person["lastName"];
 /*OBJECT METHODS
 Methods are actions that can be performed on objects.*/
 var person = {
+    
     firstName: "John",
     lastName : "Doe",
     id       : 5566,
@@ -50,16 +51,31 @@ delete person.age;
 
 
 //Function that creates an object and displays the name
-function changeHeading(){
-    function Person(first, last, age, eye) {
+// function changeHeading(){
+//     function Person(first, last, age, eye) {
+//         this.firstName = first;
+//         this.lastName = last;
+//         this.age = age;
+//         this.eyeColor = eye;
+//         this.name = function() {
+//           return this.firstName + " " + this.lastName
+//         };
+//     }
+//     var person1 = new Person("Bill", "Murray", 55, "green");
+//     document.getElementById("heading").innerHTML = person1.name();
+// }
+
+
+class Person {
+    constructor(first, last, age, eye) {
         this.firstName = first;
         this.lastName = last;
         this.age = age;
         this.eyeColor = eye;
-        this.name = function() {
-          return this.firstName + " " + this.lastName
-        };
     }
-    var person1 = new Person("Bill", "Murray", 7, "green");
-    document.getElementById("heading").innerHTML = person1.name();
+};
+
+function changeHeading() {
+  let person2 = new Person("Jared", "Smith", 38, "Blue");
+  document.getElementById("heading").innerHTML = person1.name();
 }
