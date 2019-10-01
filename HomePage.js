@@ -36,4 +36,6 @@ person.nationality = "English";
 //The delete keyword deletes a property from an object:
 delete person.age;
 
-document.getElementById("heading").innerHTML = person.fullName;
+function changeHeading(){
+    document.getElementById("heading").innerHTML = person.fullName;
+}
