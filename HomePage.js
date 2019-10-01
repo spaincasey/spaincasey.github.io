@@ -38,7 +38,6 @@ delete person.age;
 
 
 function changeHeading(){
-    var person1 = person("Bill", "Murray", 1234);
-    var full = person1.fullName();
-    document.getElementById("heading").innerHTML = full;
+    var person1 = new person("Bill", "Murray", 1234);
+    document.getElementById("heading").innerHTML = person1.fullName;
 }
