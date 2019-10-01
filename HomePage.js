@@ -17,14 +17,14 @@ person["lastName"];
 
 /*OBJECT METHODS
 Methods are actions that can be performed on objects.*/
-var person = {
-    firstName: "John",
-    lastName : "Doe",
-    id       : 5566,
-    fullName : function() {
-      return this.firstName + " " + this.lastName;
-    }
-};
+// var person = {
+//     firstName: "John",
+//     lastName : "Doe",
+//     id       : 5566,
+//     fullName : function() {
+//       return this.firstName + " " + this.lastName;
+//     }
+// };
 
 function Person(first, last, age, eye) {
     this.firstName = first;
@@ -49,6 +49,6 @@ delete person.age;
 
 
 function changeHeading(){
-    var person1 = new Person("Bill", "Murray", 1234);
+    var person1 = new Person("Bill", "Murray", 7, "green");
     document.getElementById("heading").innerHTML = person1.name();
 }
