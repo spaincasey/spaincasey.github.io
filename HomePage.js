@@ -49,6 +49,15 @@ delete person.age;
 
 
 function changeHeading(){
+    function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        this.name = function() {
+          return this.firstName + " " + this.lastName
+        };
+    }
     var person1 = new Person("Bill", "Murray", 7, "green");
     document.getElementById("heading").innerHTML = person1.name();
 }
