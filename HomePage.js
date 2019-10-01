@@ -73,6 +73,9 @@ class Person {
         this.age = age;
         this.eyeColor = eye;
     }
+    name() {
+        return this.firstName + " " + this.lastName
+    };
 };
 
 function changeHeading() {
