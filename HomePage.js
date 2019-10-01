@@ -26,6 +26,17 @@ var person = {
     }
 };
 
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    this.name = function() {
+      return this.firstName + " " + this.lastName
+    };
+}
+  
+
 //You can access an object method with the following syntax:
 person.fullName();
 
@@ -38,6 +49,6 @@ delete person.age;
 
 
 function changeHeading(){
-    var person1 = new person("Bill", "Murray", 1234);
+    var person1 = new Person("Bill", "Murray", 1234);
     document.getElementById("heading").innerHTML = person1.fullName();
 }
