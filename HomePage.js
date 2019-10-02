@@ -78,7 +78,7 @@ class Person {
     };
 };
 
-function changeHeading() {
+function changeHeading(){
   let person2 = new Person("Jared", "Smith", 38, "Blue");
   document.getElementById("heading").innerHTML = person2.name();
 }
