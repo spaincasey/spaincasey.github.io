@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Homepage</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello World Assignment">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="personalhomepage.css">
+    <script>
+    class Car {
+        constructor(firstname,lastname,studentid,gpa) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.studentid = studentid;
+            this.gpa = gpa;
+        }
+        static displayStudent(x) {
+            return "id: " + x.studentid;
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="studentDirectory.css">
+</head>
+<body>
+    <div class="header">
+        <br><br><br>
+        <h1>Student Directory</h1>
+    </div>
+    <div class="form">
+        <h2>Add Student:</h2>
+        <form onsubmit="myFunction()">
+            <div class="row">
+                <div class="column">
+                    First name:<br>
+                    <input type="text" name="firstname"><br>
+                    Last name:<br>
+                    <input type="text" name="lastname"><br>
+                </div>
+                <div class="column">
+                    Student id:<br>
+                    <input type="text" name="studentid"><br>
+                    GPA:<br>
+                    <input type="text" name="gpa"><br>
+                </div>
+            </div>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="display center">
+        <h3>Student Directory:</h3>
+        <table class="directory">
+            <tr>
+                <th>Student Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>GPA</th>
+            </tr>
+            <tr>
+                <td>87-950-9613</td>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>87-950-9613</td>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
