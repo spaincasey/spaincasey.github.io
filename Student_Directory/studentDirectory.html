@@ -82,7 +82,7 @@
 		var studentId = document.getElementById("studentId").value;
         var gpa = document.getElementById("gpa").value;
 
-        var newStudent = new Student(firstName, lastName, studentId, gpa);
+        var obj = new Student(firstName, lastName, studentId, gpa);
 
 		// build the object
 		// var obj = {
@@ -93,7 +93,7 @@
 		// }
 
 		data = JSON.parse(data);
-		data.students.push(newStudent);
+		data.students.push(obj);
 
 		var solo = JSON.stringify(data);
 
