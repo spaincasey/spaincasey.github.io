@@ -50,6 +50,7 @@
 	*********************************************************/
 	function build(data) {
 		var obj = JSON.parse(data);
+        document.getElementById("test").innerHTML = obj;
 		var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
 		for(var i = 0; i < obj.students.length; i++)
 		{
@@ -134,6 +135,7 @@
     <div class="display center">
         <h3>Directory:</h3>
         <p id="directory"></p>
+        <p id="test"></p>
     </div>
 
 </body>
