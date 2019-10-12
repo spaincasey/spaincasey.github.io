@@ -84,15 +84,15 @@
         var newStudent = new Student(first, last, studentId, gpa);
 
 		// build the object
-		// var obj = {
-		// 	firstName: firstName,
-        //     lastName: lastName,
-		// 	studentId: studentId,
-		// 	gpa: gpa,
-		// }
+		var obj = {
+			firstName: firstName,
+            lastName: lastName,
+			studentId: studentId,
+			gpa: gpa,
+		}
 
 		data = JSON.parse(data);
-		data.students.push(newStudent);
+		data.students.push(obj);
 
 		var solo = JSON.stringify(data);
 
