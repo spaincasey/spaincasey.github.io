@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Homepage</title>
+    <title>Student Directory</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +9,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="personalhomepage.css">
     <script>
-    class Car {
+    /********************************************************
+	* Student class 
+	*********************************************************/
+    class Student {
         constructor(firstname,lastname,studentid,gpa) {
             this.firstname = firstname;
             this.lastname = lastname;
             this.studentid = studentid;
             this.gpa = gpa;
         }
-        static displayStudent(x) {
-            return "id: " + x.studentid;
-        }
     }
+
+    /********************************************************
+	* Sets focus, reads the txt document, resets form values
+	*********************************************************/
+    window.onload = function() {
+	  	document.getElementById("firstName").focus();
+	  	read();
+	  	resetValues();
+	}
+
+	/********************************************************
+	* Resets all the values in the form.
+	*********************************************************/
+	function resetValues() {
+		document.getElementById("newStudent").reset();
+	}
+
+	/********************************************************
+	* AJAX request to read the text file.
+	*********************************************************/
+	function read() {
+		//alert("in the read function");
+		document.getElementById("results");
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				data = this.responseText;
+				build(data);
+			}
+		};
+		xhttp.open("GET", "studentDirectory.txt" , true);
+		xhttp.send();
+		//alert("End of read function");
+	}
+
+	/********************************************************
+	* This function builds the table to display the schedule.
+	*********************************************************/
+	function build(data) {
+		var obj = JSON.parse(data);
+		var table = "<table><tr><th>First Name</th><th>Last Name</th><th>Student ID</th><th>GPA</th></tr>";
+		for(var i = 0; i < obj.students.length; i++)
+		{
+			table += "<tr><td>" + obj.students[i].firstName + "</td><td>" + obj.students[i].lastName + "</td><td>" + obj.students[i].studentId + "</td><td>" + obj.students[i].gpa + "</td></tr>";
+		}
+
+		document.getElementById("directory").innerHTML = table;
+	}
+
+	/********************************************************
+	* Write the new information to the file.
+	*********************************************************/
+	function writeFile() {
+		// get all the variables from the form
+		var first = document.getElementById("firstName").value;
+        var last = document.getElementById("lastName").value;
+		var studentId = document.getElementById("studentId").value;
+        var gpa = document.getElementById("gpa").value;
+
+        var newStudent = new Student(first, last, studentId, gpa);
+
+		// build the object
+		// var obj = {
+		// 	firstName: firstName,
+        //     lastName: lastName,
+		// 	studentId: studentId,
+		// 	gpa: gpa,
+		// }
+
+		data = JSON.parse(data);
+		data.students.push(newStudent);
+
+		var solo = JSON.stringify(data);
+
+		// build the url for the AJAX request
+		var url = "studentDirectory.php?obj=" + solo;
+		console.log(url);
+		
+		// AJAX Request
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				//document.getElementById("directory").innerHTML = this.responseText;
+				
+			}
+		};
+		xhttp.open("GET", url , true);
+		xhttp.send();
+
+		// Read the table
+		read();
+
+	}
+    
     </script>
     <link rel="stylesheet" href="studentDirectory.css">
 </head>
@@ -30,28 +124,30 @@
     </div>
     <div class="form">
         <h2>Add Student:</h2>
-        <form onsubmit="myFunction()">
+        <form id="newStudent" onsubmit="writeFile()">
             <div class="row">
                 <div class="column">
                     First name:<br>
-                    <input type="text" name="firstname"><br>
+                    <input type="text" id="firstName"><br>
                     Last name:<br>
-                    <input type="text" name="lastname"><br>
+                    <input type="text" id="lastName"><br>
                 </div>
                 <div class="column">
                     Student id:<br>
-                    <input type="text" name="studentid"><br>
+                    <input type="text" id="studentId"><br>
                     GPA:<br>
-                    <input type="text" name="gpa"><br>
+                    <input type="text" id="gpa"><br>
                 </div>
             </div>
             <br>
             <input type="submit">
+            <button type="button" onclick="resetValues()" id="resetBtn">Clear Form</button>
         </form>
     </div>
     <div class="display center">
-        <h3>Student Directory:</h3>
-        <table class="directory">
+        <h3>Directory:</h3>
+        <p id="directory"></p>
+        <!-- <table class="directory">
             <tr>
                 <th>Student Id</th>
                 <th>Firstname</th>
@@ -70,7 +166,7 @@
                 <td>Jackson</td>
                 <td>94</td>
             </tr>
-        </table>
+        </table> -->
     </div>
 
 </body>
