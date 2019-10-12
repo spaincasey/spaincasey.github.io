@@ -76,12 +76,12 @@
 	*********************************************************/
 	function writeFile() {
 		// get all the variables from the form
-		var first = document.getElementById("firstName").value;
-        var last = document.getElementById("lastName").value;
+		var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
 		var studentId = document.getElementById("studentId").value;
         var gpa = document.getElementById("gpa").value;
 
-        var newStudent = new Student(first, last, studentId, gpa);
+        var newStudent = new Student(firstName, lastName, studentId, gpa);
 
 		// build the object
 		// var obj = {
