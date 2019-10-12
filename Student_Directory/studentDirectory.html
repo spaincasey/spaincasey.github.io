@@ -15,10 +15,10 @@
 	* Student class 
 	*********************************************************/
     class Student {
-        constructor(firstname,lastname,studentid,gpa) {
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.studentid = studentid;
+        constructor(firstName,lastName,studentId,gpa) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.studentId = studentId;
             this.gpa = gpa;
         }
     }
@@ -84,12 +84,12 @@
         var newStudent = new Student(first, last, studentId, gpa);
 
 		// build the object
-		var obj = {
-			firstName: firstName,
-            lastName: lastName,
-			studentId: studentId,
-			gpa: gpa,
-		}
+		// var obj = {
+		// 	firstName: firstName,
+        //     lastName: lastName,
+		// 	studentId: studentId,
+		// 	gpa: gpa,
+		// }
 
 		data = JSON.parse(data);
 		data.students.push(obj);
