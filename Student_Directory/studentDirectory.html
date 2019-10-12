@@ -14,14 +14,7 @@
     /********************************************************
 	* Student class 
 	*********************************************************/
-    class Student {
-        constructor(firstName,lastName,studentId,gpa) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.studentId = studentId;
-            this.gpa = gpa;
-        }
-    }
+    
 
     /********************************************************
 	* Sets focus, reads the txt document, resets form values
@@ -75,6 +68,14 @@
 	* Write the new information to the file.
 	*********************************************************/
 	function writeFile() {
+        class Student {
+        constructor(firstName,lastName,studentId,gpa) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.studentId = studentId;
+            this.gpa = gpa;
+            }
+        }
 		// get all the variables from the form
 		var firstName = document.getElementById("firstName").value;
         var lastName = document.getElementById("lastName").value;
