@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="studentDirectory.css">
     <script type="text/javascript">
-    
+    var data;
     /********************************************************
 	* Student class 
 	*********************************************************/
@@ -82,15 +82,15 @@
 		var studentId = document.getElementById("studentId").value;
         var gpa = document.getElementById("gpa").value;
 
-        // var obj = new Student(firstName, lastName, studentId, gpa);
+        var obj = new Student(firstName, lastName, studentId, gpa);
 
 		// build the object
-		var obj = {
-			firstName: firstName,
-            lastName: lastName,
-			studentId: studentId,
-			gpa: gpa,
-		}
+		// var obj = {
+		// 	firstName: firstName,
+        //     lastName: lastName,
+		// 	studentId: studentId,
+		// 	gpa: gpa,
+		// }
 
 		data = JSON.parse(data);
 		data.students.push(obj);
